@@ -3,27 +3,35 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-//use seperate model for replys?
-// same model ifcomment field?
+//use seperate model for replys? // same model ifcomment field?
 
 Post.init(
     {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            unique: true,
-            autoIncrement: true
-            
-          },
-          title: {
-            type: DataTypes.STRING,
-            unique: true,
-            allowNull: false
-          },
-          body: {
-            type: DataTypes.STRING,
-            allowNull: false,
+      author_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: false,
+        autoIncrement: true,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
+      },
+      id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        unique: true,
+        autoIncrement: true
+      },
+      title: {
+        type: DataTypes.STRING,
+        unique: true,
+        allowNull: false
+      },
+      body: {
+        type: DataTypes.STRING,
+        allowNull: false,
         }
     },
     {
