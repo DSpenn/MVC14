@@ -2,12 +2,24 @@ const Post = require('./Post');
 const Comment = require('./Comment');
 const User = require('./User');
 
-//Users Hasmany post;
-//user haasmany commemtl;
-//post belongsto user;
-//commnet belongsto post
-//post hasone user?
 
+Post.hasMany(Comment, {
+
+});
+
+Post.belongsTo(User, {
+
+});
+
+User.hasMany(Post, {
+
+});
+
+User.hasMany(Comment, {
+
+});
+
+//Comment.belongsTo(User, { });
 
 
 module.exports = { Post, User, Comment };
