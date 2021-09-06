@@ -14,6 +14,14 @@ Comment.init(
           key: 'id',
         },
       },
+      post_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'post',
+          key: 'id',
+        },
+      },
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -29,6 +37,9 @@ Comment.init(
       content: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          len: [1]
+        }
         }
     },
     {

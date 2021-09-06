@@ -4,7 +4,7 @@ const User = require('./User');
 
 
 Post.hasMany(Comment, {
-
+    //foreignKey: 'author_id'
 });
 
 Post.belongsTo(User, {
@@ -19,7 +19,12 @@ User.hasMany(Comment, {
 
 });
 
-//Comment.belongsTo(User, { });
+Comment.belongsTo(Post, {
 
+});
+
+Comment.belongsTo(User, {
+
+});
 
 module.exports = { Post, User, Comment };

@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const bcrypt = require('bcrypt');
-//dotenv
+require('dotenv').config();
 const mysql2 = require('mysql2')
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -11,12 +11,13 @@ const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-    secret: process.env.Secret,
-    cookie: {},
+    secret: process.env.SECRET,
+    cookie: {maxAge: 1000*60*60*1},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
