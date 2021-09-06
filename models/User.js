@@ -7,8 +7,6 @@ class User extends Model {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
-//use seperate model for replys?
-// same model ifcomment field?
 
 User.init(
   {
