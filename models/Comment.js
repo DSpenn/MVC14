@@ -9,7 +9,6 @@ Comment.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         unique: false,
-        autoIncrement: true,
         references: {
           model: 'user',
           key: 'id',

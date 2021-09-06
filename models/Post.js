@@ -9,7 +9,6 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       unique: false,
-      autoIncrement: true,
       references: {
         model: 'user',
         key: 'id',
@@ -23,9 +22,10 @@ Post.init(
       autoIncrement: true
     },
     created_date: {
-      type: Sequelize.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false,
       unique: false,
+      defaultValue: DataTypes.NOW //should set default value as todays date
     },
     title: {
       type: DataTypes.STRING,
