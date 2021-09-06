@@ -4,34 +4,30 @@ const withAuth = require('../utils/auth');
 
 
 router.get('/', async (req, res) => {
-  // Send the rendered Handlebars.js template back as the response
-  res.render('homepage');
-}); 
-/*
-router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      order: [['title', 'ASC']], //change this to date
-      include: [
-        {
-          model: User,
-          attributes: ['name']  
-        }
-      ]
-    });
+      attributes: ['id','title','body','created_date'],
+      include: [{
+          model: Comment,
+          attributes: ['id', 'content', 'post_id', 'user_id'],
+      },
+        { model: User, attributes: ['name']}]
+    })
 
-    const posts = dbPostData.map((apost) => apost.get({ plain: true }));
+    const posts = dbPostData.map((post) => post.get({ plain: true }));
 
-    res('homepage', { 
+    res.render('homepage', { 
       posts, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
   }
-}); 
+});   
 
 
+
+/*
 router.get('/', withAuth, async (req, res) => { // Prevent non logged in users from viewing the homepage
   try {
     const userData = await User.findAll({

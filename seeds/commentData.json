@@ -1,0 +1,17 @@
+[
+    {
+        "user_id": "1",
+        "post_id": "1",
+        "content": "Comment by user1 on post1"
+    },
+    {
+        "user_id": "2",
+        "post_id": "2",
+        "content": "Comment by user2 on post2"
+    },
+    {
+        "user_id": "3",
+        "post_id": "3",
+        "content": "Comment by user3 on post3"
+    }
+]

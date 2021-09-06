@@ -5,7 +5,7 @@ class Comment extends Model {}
 
 Comment.init(
     {
-      author_id: {
+      user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         unique: false,
@@ -28,11 +28,6 @@ Comment.init(
         primaryKey: true,
         unique: true,
         autoIncrement: true
-      },
-      title: {
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false
       },
       content: {
         type: DataTypes.STRING,

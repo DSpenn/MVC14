@@ -2,16 +2,16 @@
     {
         "title": "Post title #1 is a great title",
         "body": "do you know the muffin man?",
-        "author_id": "1"
+        "user_id": "1"
     },
     {
         "title": "Post title #2 is a bad title",
         "body": "the body!? of #2. they dead?",
-        "author_id": "2"
+        "user_id": "2"
     },
     {
         "title": "Post title #3 is a title!",
         "body": "the body!? of #3",
-        "author_id": "2"
+        "user_id": "2"
     }
 ]
