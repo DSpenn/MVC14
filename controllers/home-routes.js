@@ -2,20 +2,27 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+
+router.get('/', async (req, res) => {
+  // Send the rendered Handlebars.js template back as the response
+  res.render('homepage');
+}); 
+/*
 router.get('/', async (req, res) => {
   try {
-    const postData = await Post.findAll({
+    const dbPostData = await Post.findAll({
+      order: [['title', 'ASC']], //change this to date
       include: [
         {
           model: User,
-          attributes: ['name'],
-        },
-      ],
+          attributes: ['name']  
+        }
+      ]
     });
 
-    const posts = postData.map((post) => posts.get({ plain: true }));
+    const posts = dbPostData.map((apost) => apost.get({ plain: true }));
 
-    res.render('homepage', { 
+    res('homepage', { 
       posts, 
       logged_in: req.session.logged_in 
     });
@@ -23,6 +30,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 }); 
+
 
 router.get('/', withAuth, async (req, res) => { // Prevent non logged in users from viewing the homepage
   try {
@@ -38,11 +46,12 @@ router.get('/', withAuth, async (req, res) => { // Prevent non logged in users f
   } catch (err) {
     res.status(500).json(err);
   }
-});
+}); */
+
 
 router.get('/login', (req, res) => { // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect('/homepage');
+    res.redirect('/');
     return;
   }
   res.render('login');
