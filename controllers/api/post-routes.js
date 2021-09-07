@@ -1,32 +1,22 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-
-
-router.get('/post/:id', async (req, res) => {
-    try {
-      const projectData = await Project.findByPk(req.params.id, {
-        include: [
-          {
-            model: User,
-            attributes: ['name'],
-          },
-        ],
-      });
   
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-  
-      res.render('dashboard', {
-        posts,
-        loggedin: req.session.loggedin
-      });
-    } catch (err) {
+router.post('/', withAuth, (req, res) => {   // Create a new post
+  Post.create({
+    title: req.body.title,
+    body: req.body.body,
+    user_id: req.session.user_id
+  })
+    .then(dbPostData => res.json(dbPostData))
+    .catch(err => {
+      console.log(err);
       res.status(500).json(err);
-    }
-  });
+    });
+});
 
 
-  router.delete('/post/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => { //delete a post
     try {
       const postData = await Post.destroy({
         where: {
@@ -46,6 +36,5 @@ router.get('/post/:id', async (req, res) => {
     }
   });
 
-  module.exports = router;
-
+module.exports = router;
   

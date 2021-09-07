@@ -17,22 +17,22 @@ router.get('/', async (req, res) => {
 
     res.render('homepage', { 
       posts, 
-      loggedin: req.session.loggedin,
+      loggedin: req.session.loggedin
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });   
 
-router.get('/post/:id', async (req, res) => {
+router.get('/post/:id', async (req, res) => { // Single post server
   try {
     const PostData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      attributes: ['id','title','body','created_date'],
+      include: [{
+          model: Comment,
+          attributes: ['id', 'content', 'post_id', 'user_id'],
+      },
+        { model: User, attributes: ['name']}]
     });
 
     const post = postData.get({ plain: true });
@@ -56,7 +56,7 @@ router.get('/dashboard', withAuth, async (req, res) => { //shows only posts by t
 
     const user = userData.get({ plain: true });
 
-    res.render('homepage', {
+    res.render('dashboard', {
       ...user,
       loggedin: req.session.loggedin,
     });
