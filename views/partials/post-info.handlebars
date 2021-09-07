@@ -1,6 +1,9 @@
     {{log 'loggedin' loggedin}}
 <section class="card">
-    <header>{{title}}</header></a>
+    <header>{{title}}</header>
     <p>Posted by {{user.name}} on {{format_date created_date}}</p>
   <p class="card-body">{{body}}</p>
+      {{#each comments as |comment|}}
+        {{> comment-info comment}}
+    {{/each}}
 </section>

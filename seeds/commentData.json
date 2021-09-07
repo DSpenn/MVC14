@@ -7,11 +7,11 @@
     {
         "user_id": "2",
         "post_id": "2",
-        "content": "Comment by user2 on post2"
+        "content": "Comment by user2 on post2 WHEN I revisit the site at a later time and choose to sign in THEN I am prompted to enter my username and password"
     },
     {
         "user_id": "3",
         "post_id": "3",
-        "content": "Comment by user3 on post3"
+        "content": "AS A developer who writes about tech I WANT a CMS-style blog site SO THAT I can publish articles, blog posts, and my thoughts and opinions"
     }
 ]

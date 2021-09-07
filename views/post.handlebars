@@ -4,6 +4,9 @@
   <p>
     <span>{{body}}</span>
   </p>
+    {{#each comments as |comment|}}
+        {{> comment-info comment}}
+    {{/each}}
   <p>
     <button class="btn btn-primary">Comment</button>
   </p>
