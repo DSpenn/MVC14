@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/homepage', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       attributes: ['id','title','body','created_date'],
@@ -24,8 +24,30 @@ router.get('/homepage', async (req, res) => {
   }
 });   
 
+router.get('/post/:id', async (req, res) => {
+  try {
+    const PostData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-router.get('/', withAuth, async (req, res) => { //shows only posts by this user
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      ...post,
+      loggedin: req.session.loggedin
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get('/dashboard', withAuth, async (req, res) => { //shows only posts by this user
   try {     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -43,7 +65,7 @@ router.get('/', withAuth, async (req, res) => { //shows only posts by this user
   }
 }); 
 
-router.get('/dashboard', withAuth, async (req, res) => { // Prevent non logged in users from viewing the homepage
+/*router.get('/dashboard', withAuth, async (req, res) => { // Prevent non logged in users from viewing the homepage
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
@@ -52,12 +74,12 @@ router.get('/dashboard', withAuth, async (req, res) => { // Prevent non logged i
     const users = userData.map((post) => post.get({ plain: true }));
     res.render('dashboard', {
       ...user,
-      logged_in: req.session.logged_in,      // Pass the logged in flag to the template
+      loggedin: req.session.loggedin,      // Pass the logged in flag to the template
     });
   } catch (err) {
     res.status(500).json(err);
   }
-}); 
+}); */
 
 router.get('/login', (req, res) => { // If a session exists, redirect the request to the homepage
   if (req.session.loggedin) {
