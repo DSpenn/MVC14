@@ -22,10 +22,11 @@ router.post('/login', async (req, res) => {
     }
     
     req.session.save(() => {     // Create session variables based on the logged in user
+      req.session.loggedin = true;
+      req.session.logged_in = true;
       req.session.user_id = userData.id;
       req.session.name = userData.name;
-      req.session.logged_in = true;
-      
+
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -35,16 +36,18 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedin) {
     req.session.destroy(() => {     // Remove the session variables
       res.status(204).end();
+      document.location.replace('/login');
     });
   } else {
     res.status(404).end();
+    document.location.replace('/login');
   }
 });
 
-/*
+
 router.post('/', (req, res) => {
   User.create({
       name: req.body.name,
@@ -57,7 +60,8 @@ router.post('/', (req, res) => {
               req.session.user_id = dbUserData.id;
               req.session.name = dbUserData.name;
               req.session.email= dbUserData.email;
-              req.session.loggedIn = true;
+              req.session.loggedin = true;
+              req.session.logged_in = true;
 
               res.json(dbUserData);
           });
@@ -66,22 +70,6 @@ router.post('/', (req, res) => {
           console.log(err);
           res.status(500).json(err);
       });
-});*/
-
-
-router.post('/', async (req, res) => {
-  try {
-    const userData = await User.create(req.body);
-
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(userData);
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
 });
 
 

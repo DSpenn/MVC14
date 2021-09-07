@@ -2,10 +2,10 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./routes');
+const routes = require('./controllers');
 const bcrypt = require('bcrypt');
 require('dotenv').config();
-const mysql2 = require('mysql2')
+//const mysql2 = require('mysql2')
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
