@@ -8,7 +8,6 @@ Post.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: false,
       references: {
         model: 'user',
         key: 'id',
@@ -24,7 +23,6 @@ Post.init(
     created_date: {
       type: DataTypes.DATE,
       allowNull: false,
-      unique: false,
       defaultValue: DataTypes.NOW //should set default value as todays date
     },
     title: {
