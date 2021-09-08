@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
   
-router.post('/', withAuth, (req, res) => {   // Create a new post
+router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     body: req.body.body,

@@ -1,15 +1,13 @@
-const newFormHandler = async (event) => {
+const newCommentFormHandler = async (event) => {
     event.preventDefault();
 
     const content = document.querySelector('#comment-content').value.trim();
-  
+    
     if (content) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
         body: JSON.stringify({ content }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
@@ -20,4 +18,4 @@ const newFormHandler = async (event) => {
     }
   };
   
-document.querySelector('.new-comment-form').addEventListener('submit', newFormHandler);
+document.querySelector('.new-comment-form').addEventListener('submit', newCommentFormHandler);

@@ -43,16 +43,14 @@ router.get('/dashboard', withAuth, async (req, res) => { //shows only posts by t
   }
 }); 
 
-router.get('/post/:id', async (req, res) => { // Single post server
+router.get('/comment/:id', async (req, res) => { // Single post server
   try {
     const postData = await Post.findByPk(req.params.id, {
-      attributes: ['id','title','body','created_date'],
-      include: [{
-          model: Comment,
-          attributes: ['id', 'content', 'post_id', 'user_id'],
+      attributes: ['id', 'title', 'body', 'created_date'],
+      include: [{ model: Comment, attributes: ['id', 'content', 'post_id', 'user_id'],
           include: { model: User, attributes: ['name']}
       },
-        { model: User, attributes: ['name']}]
+          { model: User, attributes: ['name', 'id']}]
     });
 
     const post = postData.get({ plain: true });

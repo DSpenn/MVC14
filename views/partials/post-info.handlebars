@@ -1,6 +1,5 @@
-{{log 'this' this}}
 <section class="card">
-    <header><a href="/post/{{id}}">{{title}}</a></header>
+    <header><a href="/comment/{{id}}">{{title}}</a></header>
     <p>Posted by {{user.name}} on {{format_date created_date}}</p>
   <p class="card-body">{{body}}</p>
       {{#each comments as |comment|}}
