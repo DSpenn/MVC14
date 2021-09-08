@@ -1,9 +1,12 @@
-{{log 'loggedin' loggedin}}
+{{log 'this' this}}
 <section class="card">
-    <header>{{title}}</header>
+    <header><a href="/post/{{id}}">{{title}}</a></header>
     <p>Posted by {{user.name}} on {{format_date created_date}}</p>
   <p class="card-body">{{body}}</p>
       {{#each comments as |comment|}}
-        {{> comment-info comment}}
+        <section class="card">
+        <p>Commented by {{this.user.name}}</p>
+        <p class="card-body">{{content}}</p>
+        </section>
     {{/each}}
 </section>

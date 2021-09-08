@@ -5,7 +5,10 @@
     <span>{{body}}</span>
   </p>
     {{#each comments as |comment|}}
-        {{> comment-info comment}}
+      <section class="card">
+      <p>Commented by {{this.user.name}}</p>
+      <p class="card-body">{{content}}</p>
+      </section>
     {{/each}}
   <p>
     <button class="btn btn-primary">Comment</button>

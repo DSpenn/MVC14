@@ -5,9 +5,14 @@
         "content": "Comment by user1 on post1"
     },
     {
-        "user_id": "2",
+        "user_id": "3",
         "post_id": "2",
-        "content": "Comment by user2 on post2 WHEN I revisit the site at a later time and choose to sign in THEN I am prompted to enter my username and password"
+        "content": "WHEN I revisit the site at a later time and choose to sign in THEN I am prompted to enter my username and password"
+    },
+    {
+        "user_id": "4",
+        "post_id": "2",
+        "content": "Comennnnnnnnntsssssssssssss!!!!!!!!!!!!!!!!!!!!!!"
     },
     {
         "user_id": "3",
