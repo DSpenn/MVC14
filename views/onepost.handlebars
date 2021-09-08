@@ -6,11 +6,24 @@
   </p>
     {{#each comments as |comment|}}
       <section class="card">
-      <p>Commented by {{this.user.name}}</p>
+      <p>Commented by {{user.name}}</p>
       <p class="card-body">{{content}}</p>
       </section>
     {{/each}}
-  <p>
-    <button class="btn btn-primary">Comment</button>
-  </p>
 </div>
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>New Comment:</h3>
+
+    <form class="form new-comment-form">
+      <div class="form-group">
+        <label for="comment-body">Comment:</label>
+        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Comment</button>
+      </div>
+    </form>
+  </div>
+
+<script src="./js/comment.js"></script>
