@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-//(req.headers['Referer'].slice(-2))
+
 router.post('/', withAuth, async (req, res) => {   // Create a new post
-  postid = req.get('Referrer').slice(-2);
+
+postid = req.get('Referrer').slice(30); // there was probably better ways to get this.
+
   console.log("postid", postid);
     Comment.create({
       content: req.body.content,

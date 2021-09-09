@@ -7,5 +7,14 @@ module.exports = {
         new Date(date).getFullYear()
       }`;
     },
-  };
+    isEqual: function(a, b, opts) {
+      if (a == b) {
+          //return opts.fn(this);
+          return true;
+      } else { 
+          //return opts.inverse(this);
+          return false;
+      } 
+  },
+};
   

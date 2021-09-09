@@ -45,19 +45,23 @@ router.get('/dashboard', withAuth, async (req, res) => { //shows only posts by t
 
 router.get('/comment/:id', async (req, res) => { // Single post server
   try {
-    const postData = await Post.findByPk(req.params.id, {
-      attributes: ['id', 'title', 'body', 'created_date'],
+    const postData = await Post.findByPk(req.params.id, { attributes: ['id', 'title', 'body', 'created_date'],
       include: [{ model: Comment, attributes: ['id', 'content', 'post_id', 'user_id'],
           include: { model: User, attributes: ['name']}
       },
           { model: User, attributes: ['name', 'id']}]
     });
 
+    const sesUId = req.session.user_id;
+    console.log("req.session.user_id", req.session.user_id);
+    console.log("sesUId", sesUId);
+
     const post = postData.get({ plain: true });
 
     res.render('onepost', {
       ...post,
-      loggedin: req.session.loggedin
+      loggedin: req.session.loggedin,
+      sesUId: req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);

@@ -1,12 +1,23 @@
 
 <div class="text-center">
   <h2>{{title}}</h2>
-  <p>{{id}}! Created by {{user.name}} on {{format_date created_date}}</p>
+  <p>Created by {{user.name}} on {{format_date created_date}}</p>
   <p><span>{{body}}</span></p>
     {{#each comments as |comment|}}
       <section class="card">
       <p>Commented by {{user.name}}</p>
-      <p class="card-body">{{content}}</p>
+      <p class="card-body">{{content}}
+      {{log 'req.session.user_id' req.session.user_id}}
+      {{log 'loggedin' loggedin}}
+      {{log 'sesUId' sesUId}}
+      {{log 'user.id' user.id}}
+      {{log 'res.locals' res.locals}}
+      {{log 'app.locals' app.locals }}
+      {{log 'user.user_id' user_id}}
+      {{log 'this' this}}
+      {{#if (isEqual user.id this.id)}}
+      <button class="card-text btn btn-sm btn-danger" data-id="{{this.id}}">DELETE</button></p>
+       {{/if}}
       </section>
     {{/each}}
 </div>
