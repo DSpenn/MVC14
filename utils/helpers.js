@@ -8,6 +8,9 @@ module.exports = {
       }`;
     },
     isEqual: function(a, b, opts) {
+      //console.log("a", a);
+      //console.log("b", b);
+      
       if (a == b) {
           //return opts.fn(this);
           return true;

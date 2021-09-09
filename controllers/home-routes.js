@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => { //homepage
+router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       attributes: ['id','title','body','created_date'],
@@ -25,8 +25,8 @@ router.get('/', async (req, res) => { //homepage
   }
 });   
 
-router.get('/dashboard', withAuth, async (req, res) => { //shows only posts by this user dashboard page
-  try {     // Find the logged in user based on the session ID
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
@@ -43,13 +43,12 @@ router.get('/dashboard', withAuth, async (req, res) => { //shows only posts by t
   }
 }); 
 
-router.get('/comment/:id', async (req, res) => { // Single post server
+router.get('/comment/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, { attributes: ['id', 'title', 'body', 'created_date'],
       include: [{ model: Comment, attributes: ['id', 'content', 'post_id', 'user_id'],
           include: { model: User, attributes: ['name']}
-      },
-          { model: User, attributes: ['name', 'id']}]
+      }]
     });
 
     const sesUId = req.session.user_id;
@@ -57,11 +56,11 @@ router.get('/comment/:id', async (req, res) => { // Single post server
     console.log("sesUId", sesUId);
 
     const post = postData.get({ plain: true });
-
+    
     res.render('onepost', {
       ...post,
       loggedin: req.session.loggedin,
-      sesUId: req.session.user_id
+      sesUId: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
