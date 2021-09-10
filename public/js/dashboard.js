@@ -36,7 +36,30 @@ const newPostFormHandler = async (event) => {
       }
     }
   };
-  
+
+const editButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+    const title = document.querySelector('#post-title').value.trim();
+    const body = document.querySelector('#post-body').value.trim();
+
+  if (title && body && id) {
+    const response = await fetch(`/api/posts/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ title, body }),
+      headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to update Post');
+  }
+}
+}};
+
 document.querySelector('.new-post-form').addEventListener('submit', newPostFormHandler);
 document.querySelector('.post-list').addEventListener('click', delButtonHandler);
-
+document.querySelector('.edit').addEventListener('click', editButtonHandler);

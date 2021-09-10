@@ -1,39 +1,57 @@
 const newCommentFormHandler = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const content = document.querySelector('#comment-content').value.trim();
+  const content = document.querySelector('#comment-content').value.trim();
     
-    if (content) {
-      const response = await fetch(`/api/comments`, {
-        method: 'POST',
-        body: JSON.stringify({ content }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.reload();
-      } else {
-        alert('Failed to post comment');
-      }
-    }
-  };
-
-
-const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/comments/${id}`, {
-      method: 'DELETE',
+  if (content) {
+    const response = await fetch(`/api/comments`, {
+      method: 'POST',
+      body: JSON.stringify({ content }),
+      headers: { 'Content-Type': 'application/json' },
     });
   
     if (response.ok) {
       document.location.reload();
     } else {
-      alert('Failed to delete Post');
+      alert('Failed to post comment');
     }
   }
-}; 
+};
 
-document.querySelector('.comment-list').addEventListener('click', delButtonHandler);  
+  const delEditButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-delid')) {
+    let id = event.target.getAttribute('data-delid');
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'DELETE',
+    });
+  
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert('Failed to delete Post');
+  }
+}
+
+if (event.target.hasAttribute('data-editid')) {
+  let id = event.target.getAttribute('data-editid');
+  const content = document.querySelector('#comment-content').value.trim();
+
+  if (content && id) {
+    const response = await fetch(`/api/comments/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ content }),
+      headers: {
+      'Content-Type': 'application/json',
+    },
+});
+
+  if (response.ok) {
+    document.location.reload();
+  } else {
+    alert('Failed to update Comment');
+  }
+}}
+};
+
+document.querySelector('.comment-list').addEventListener('click', delEditButtonHandler);   
 document.querySelector('.new-comment-form').addEventListener('submit', newCommentFormHandler);
-

@@ -7,13 +7,10 @@
       <section class="card">
         <div class="card-header bg-transparent border-success">Commented by {{user.name}} {{user.id}}</div>
       <p class="card-body">{{content}}
-        {{log '../sesUId current user' ../sesUId}}
-        {{log 'this' this}}
-        {{log 'this.user_id' this.user_id}}
-        {{log 'user_id ' user_id}}
-
       {{#if (isEqual ../sesUId user_id)}} 
-      <button class="card-text btn btn-sm btn-danger" data-id="{{this.id}}">DELETE</button></p>
+      <button class="card-text btn btn-sm btn-danger" data-delid="{{this.id}}">DELETE</button>
+      <div class ="edit"><button class="btn btn-sm" data-editid="{{this.id}}">update</button></div>
+      </p>
        {{/if}}
       </section>
     {{/each}}
