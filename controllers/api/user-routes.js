@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-    console.log("userData.id",userData.id);
+    console.log("userData.id", userData.id);
 
     req.session.save(() => {
       req.session.loggedin = true;
@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', (req, res) => {
   if (req.session.loggedin) {
-    req.session.destroy(() => {     // Remove the session variables
+    req.session.destroy(() => { // Remove the session variables
       res.status(204).end();
       document.location.replace('/login');
     });
@@ -46,28 +46,27 @@ router.post('/logout', (req, res) => {
   }
 });
 
-
 router.post('/', (req, res) => {
   User.create({
       name: req.body.name,
       password: req.body.password,
       email: req.body.email
-  })
+    })
 
-  .then(dbUserData => {
-          req.session.save(() => {
-              req.session.user_id = dbUserData.id;
-              req.session.name = dbUserData.name;
-              req.session.email= dbUserData.email;
-              req.session.loggedin = true;
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.name = dbUserData.name;
+        req.session.email = dbUserData.email;
+        req.session.loggedin = true;
 
-              res.json(dbUserData);
-          });
-      })
-      .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
+        res.json(dbUserData);
       });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 

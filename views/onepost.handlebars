@@ -1,20 +1,23 @@
 <div class="text-center">
   <h2>{{title}}</h2>
   <p>Created by {{user.name}} on {{format_date created_date}}</p>
-  <p><span>{{body}}</span></p>
+  <p><span>
+
+      {{body}}</span></p>
   <div class="comment-list">
     {{#each comments as |comment|}}
       <section class="card">
         <div class="card-header bg-transparent border-success">Commented by {{user.name}} {{user.id}}</div>
-      <p class="card-body">{{content}}
-      {{#if (isEqual ../sesUId user_id)}} 
-      <button class="card-text btn btn-sm btn-danger" data-delid="{{this.id}}">DELETE</button>
-      <div class ="edit"><button class="btn btn-sm" data-editid="{{this.id}}">update</button></div>
-      </p>
-       {{/if}}
+        <p class="card-body">{{content}}
+          {{#if (isEqual ../sesUId user_id)}}
+            <button class="card-text btn btn-sm btn-danger" data-delid="{{this.id}}">DELETE</button>
+            <div class="edit"><button class="btn btn-sm" data-editid="{{this.id}}">update</button></div>
+        </p>
+        {{/if}}
       </section>
     {{/each}}
-</div></div>
+  </div>
+</div>
 <div class="row mt-4">
   <div class="col-md-6">
     <h3>New Comment:</h3>
