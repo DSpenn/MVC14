@@ -2,7 +2,7 @@
     {
         "user_id": "1",
         "post_id": "1",
-        "content": "Comment by user1 on post1"
+        "content": "Writing about tech can be just as important as making it."
     },
     {
         "user_id": "3",
@@ -12,7 +12,12 @@
     {
         "user_id": "4",
         "post_id": "2",
-        "content": "Comennnnnnnnntsssssssssssss!!!!!!!!!!!!!!!!!!!!!!"
+        "content": "COMMENT!"
+    },
+    {
+        "user_id": "3",
+        "post_id": "1",
+        "content": "Application must be deployed to Heroku!"
     },
     {
         "user_id": "3",

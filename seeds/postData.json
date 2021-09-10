@@ -5,12 +5,12 @@
         "user_id": "1"
     },
     {
-        "title": "Post title #2 is a bad title",
+        "title": "Post title is a bad title",
         "body": "the body!? of #2. they dead?",
         "user_id": "2"
     },
     {
-        "title": "Post title #3 is a title!",
+        "title": "Post title is a title!",
         "body": "the body!? of #3",
         "user_id": "2"
     }

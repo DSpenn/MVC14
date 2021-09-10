@@ -1,24 +1,5 @@
 # 14 Model-View-Controller (MVC): Tech Blog
 
-## scrach delete 
-home
-    "The Tech Blog"
-    shows all posts by all users
-dashboard   
-        new post
-        shows all your posts, 
-                can click on them and update them
-login page or logout button
-        --> sign up instead of login
-
-
-edit post page.
-
-ability to comment on posts
-
-
-
-
 ## Your Task
 
 Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels!
@@ -99,34 +80,20 @@ You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to
 
 ## Grading Requirements
 
-[] Application’s folder structure follows the Model-View-Controller paradigm.
-[] Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+[X] Application’s folder structure follows the Model-View-Controller paradigm.
+[]X Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
 [] Application must be deployed to Heroku.
-
-### Deployment: 32%
-
-[] Application deployed at live URL.
-[] Application loads with no errors.
-[] Application GitHub URL submitted.
+[X] Application deployed at live URL.
+[X] Application loads with no errors.
+[X] Application GitHub URL submitted.
 [] GitHub repository contains application code.
-
-### Application Quality: 15%
-
-[] User experience is intuitive and easy to navigate.
-[] User interface style is clean and polished.
+[X] User experience is intuitive and easy to navigate.
+[X] User interface style is clean and polished.
 [] Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-[] Repository has a unique name.
-[] Repository follows best practices for file structure and naming conventions.
-[] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-[] Repository contains multiple descriptive commit messages.
-[] Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-[] The URL of the functional, deployed application.
-[] The URL of the GitHub repository, with a unique name and a readme describing the project.
+[X] Repository has a unique name.
+[X] Repository follows best practices for file structure and naming conventions.
+[X] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+[X] Repository contains multiple descriptive commit messages.
+[X] Repository contains quality readme file with description, screenshot, and link to deployed application.
+[X] The URL of the functional, deployed application.
+[X] The URL of the GitHub repository, with a unique name and a readme describing the project.

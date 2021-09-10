@@ -9,17 +9,18 @@
   </head>
 
   <body>
-    <div class="flex-column justify-space-around"></div>
+    <div class="flex-column justify-space-around">
     <header>
       <h1>Tech Blog</h1>
     </header>
-    <nav>
+
+    <nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
       <a href="/">Home</a>
       {{#if loggedin}}
-        <a href="/dashboard">Dashboard</a>
+        <a class="nav-link" href="/dashboard">Dashboard</a>
         <button id="logout" class="btn-dark">Logout</button>
       {{else}}
-        <a href="/login">Login</a>
+        <a class="nav-link" href="/login">Login</a>
       {{/if}}
     </nav>
     <main>
