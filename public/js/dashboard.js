@@ -21,7 +21,7 @@ const newPostFormHandler = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
+const delEditButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -35,11 +35,9 @@ const delButtonHandler = async (event) => {
       alert('Failed to delete Post');
     }
   }
-};
 
-const editButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  if (event.target.hasAttribute('data-editid')) {
+    const id = event.target.getAttribute('data-editid');
     const title = document.querySelector('#post-title').value.trim();
     const body = document.querySelector('#post-body').value.trim();
 
@@ -62,5 +60,4 @@ const editButtonHandler = async (event) => {
 };
 
 document.querySelector('.new-post-form').addEventListener('submit', newPostFormHandler);
-document.querySelector('.post-list').addEventListener('click', delButtonHandler);
-document.querySelector('.edit').addEventListener('click', editButtonHandler);
+document.querySelector('.post-list').addEventListener('click', delEditButtonHandler);

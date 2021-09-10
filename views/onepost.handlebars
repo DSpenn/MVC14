@@ -4,14 +4,14 @@
   <p><span>
 
       {{body}}</span></p>
-  <div class="comment-list">
+  <div class="comment-list mx-auto border border-secondary ">
     {{#each comments as |comment|}}
-      <section class="card">
-        <div class="card-header bg-transparent border-success">Commented by {{user.name}} {{user.id}}</div>
+      <section class="card mx-auto mt-3">
+        <div class="card-header bg-transparent border">Commented by {{user.name}} {{user.id}}</div>
         <p class="card-body">{{content}}
           {{#if (isEqual ../sesUId user_id)}}
-            <button class="card-text btn btn-sm btn-danger" data-delid="{{this.id}}">DELETE</button>
-            <div class="edit"><button class="btn btn-sm" data-editid="{{this.id}}">update</button></div>
+            <div><button class="card-text btn btn-sm btn-danger" data-delid="{{this.id}}">DELETE</button></div>
+            <div><button class="btn btn-sm" data-editid="{{this.id}}">update</button></div>
         </p>
         {{/if}}
       </section>
