@@ -1,11 +1,10 @@
-<section class="card">
-    <header><a class="navitem" href="/comment/{{id}}">{{title}}</a></header>
-    <p>Posted by {{user.name}} on {{format_date created_date}}</p>
-  <p class="card-body">{{body}}</p>
-      {{#each comments as |comment|}}
-        <section class="card">
-        <div class="card-header bg-transparent border-success">Commented by {{this.user.name}}</div>
-        <p class="card-body">{{content}}</p>
-        </section>
-    {{/each}}
+<section class="card m-2 p-2 text-center">
+  <header><a class="navitem" href="/comment/{{id}}">{{title}}</a>
+  <p>Posted by {{user.name}} on {{format_date created_date}}</p></header>
+  <p class="card-body">{{body}}</p> 
+    {{#each comments as |comment|}}
+    <div class="card text-center gap-3 m-3 border border-light">
+      <div class="card-header bg-transparent border-light">Commented by {{this.user.name}}</div>
+      <p class="card-text">{{content}}</p></div>
+  {{/each}}
 </section>

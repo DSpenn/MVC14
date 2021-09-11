@@ -18,8 +18,8 @@ const newCommentFormHandler = async (event) => {
   }
 };
 
-const delEditButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-delid')) {
+const ButtonHandler = async (event) => { 
+  if (event.target.hasAttribute('data-delid')) { //if delete button
     let id = event.target.getAttribute('data-delid');
     const response = await fetch(`/api/comments/${id}`, {
       method: 'DELETE',
@@ -32,7 +32,7 @@ const delEditButtonHandler = async (event) => {
     }
   }
 
-  if (event.target.hasAttribute('data-editid')) {
+  if (event.target.hasAttribute('data-editid')) { // if edit button
     let id = event.target.getAttribute('data-editid');
     const content = document.querySelector('#comment-content').value.trim();
 
@@ -56,5 +56,5 @@ const delEditButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('.comment-list').addEventListener('click', delEditButtonHandler);
+document.querySelector('.comment-list').addEventListener('click', ButtonHandler);
 document.querySelector('.new-comment-form').addEventListener('submit', newCommentFormHandler);
