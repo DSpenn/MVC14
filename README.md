@@ -8,15 +8,13 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 
 ## Packages
 
-```
-express-handlebars
-express-session
-connect-session-sequelize
-bcrypt 
-dotenv
-Sequelize
-MySQL2
-```
+[express-handlebars](https://www.npmjs.com/package/express-handlebars)
+[express-session](https://www.npmjs.com/package/express-session)
+[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+[bcrypt package](https://www.npmjs.com/package/bcrypt)
+[dotenv package](https://www.npmjs.com/package/dotenv)
+[Sequelize](https://www.npmjs.com/package/sequelize)
+[MySQL2](https://www.npmjs.com/package/mysql2)
 
 ## User Story
 
@@ -69,26 +67,18 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 The following animation demonstrates the application functionality:
 ![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
 
-## Getting Started
-
-Your application’s folder structure must follow the Model-View-Controller paradigm. You’ll need to use the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views, use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect to a MySQL database for your Models, and create an Express.js API for your Controllers.
-
-You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to use environment variables, the [bcrypt package](https://www.npmjs.com/package/bcrypt) to hash passwords, and the [express-session](https://www.npmjs.com/package/express-session) and [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize) packages to add authentication.
-
-!!Note!!: The [express-session](https://www.npmjs.com/package/express-session) package stores the session data on the client in a cookie. When you are idle on the site for more than a set time, the cookie will expire and you will be required to log in again to start a new session. This is the default behavior and you do not have to do anything to your application other than implement the npm package.
-
 ## Grading Requirements
 
 [X] Application’s folder structure follows the Model-View-Controller paradigm.
 [X] Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
-[] Application must be deployed to Heroku.
+[X] Application must be deployed to Heroku.
 [X] Application deployed at live URL.
 [X] Application loads with no errors.
 [X] Application GitHub URL submitted.
 [X] GitHub repository contains application code.
 [X] User experience is intuitive and easy to navigate.
 [X] User interface style is clean and polished.
-[] Application resembles the mock-up functionality provided in the homework instructions.
+[X] Application resembles the mock-up functionality provided in the homework instructions.
 [X] Repository has a unique name.
 [X] Repository follows best practices for file structure and naming conventions.
 [X] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
