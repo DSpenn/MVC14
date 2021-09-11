@@ -67,8 +67,6 @@ router.get('/comment/:id', async (req, res) => {
 			]
 		});
 		const sesUId = req.session.user_id;
-		console.log('req.session.user_id', req.session.user_id);
-		console.log('sesUId', sesUId);
 		const post = postData.get({ plain: true });
 		res.render('onepost', {
 			...post,
@@ -80,8 +78,7 @@ router.get('/comment/:id', async (req, res) => {
 	}
 });
 
-router.get('/login', (req, res) => {
-	// If a session exists, redirect the request to the homepage
+router.get('/login', (req, res) => { 	// If a session exists, redirect the request to the homepage
 	if (req.session.loggedin) {
 		res.redirect('/');
 		return;

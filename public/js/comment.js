@@ -4,7 +4,7 @@ const newCommentFormHandler = async (event) => {
   const content = document.querySelector('#comment-content').value.trim();
 
   if (content) {
-    const response = await fetch(`/api/comments`, {
+    const response = await fetch(`/api/comments/`, {
       method: 'POST',
       body: JSON.stringify({ content }),
       headers: { 'Content-Type': 'application/json' },
@@ -25,11 +25,10 @@ const ButtonHandler = async (event) => {
       method: 'DELETE',
     });
 
-    if (response.ok) {
-      document.location.reload();
-    } else {
+    if (response.ok) { document.location.reload(); }
+     else {
       alert('Failed to delete Post');
-    }
+     }
   }
 
   if (event.target.hasAttribute('data-editid')) { // if edit button
@@ -39,12 +38,8 @@ const ButtonHandler = async (event) => {
     if (content && id) {
       const response = await fetch(`/api/comments/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({
-          content
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        body: JSON.stringify({ content }),
+        headers: {'Content-Type': 'application/json'},
       });
 
       if (response.ok) {

@@ -12,7 +12,7 @@
     {
         "user_id": "4",
         "post_id": "2",
-        "content": "COMMENT!"
+        "content": "WHEN I am signed in to the site THEN I see navigation links for the homepage, the dashboard, and the option to log out"
     },
     {
         "user_id": "3",

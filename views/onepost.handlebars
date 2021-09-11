@@ -10,8 +10,8 @@
           {{#if (isEqual ../sesUId user_id)}}
             <div><button class="btn btn-sm btn-danger" data-delid="{{this.id}}">DELETE</button></div>
             <div><button class="btn btn-sm" data-editid="{{this.id}}">update</button></div>
-        </p>
         {{/if}}
+      </p>
       </section>
     {{/each}}
   </div>
@@ -25,7 +25,8 @@
         <textarea class="form-control form-input" id="comment-content" name="comment-content"></textarea>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Comment</button>
+        {{log 'this.id' this.id}}
+        <button class="btn btn-primary" data-postid="{{this.id}}">Comment</button>
       </div>
     </form>
   </div>

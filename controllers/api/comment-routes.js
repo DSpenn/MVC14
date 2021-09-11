@@ -3,10 +3,8 @@ const {User, Post, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-	postid = req.get('Referrer').slice(30); 	// there was probably better ways to get this.
-	console.log("req.body", req.body);
-	console.log("req.session", req.session);
-	console.log('postid', postid);
+	postid = req.get('Referrer').slice(30);
+	
 	Comment.create({
 		content: req.body.content,
 		user_id: req.session.user_id,
