@@ -8,7 +8,6 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 
 ## Packages
 
-
 ```
 express-handlebars
 express-session
@@ -81,12 +80,12 @@ You’ll also need the [dotenv package](https://www.npmjs.com/package/dotenv) to
 ## Grading Requirements
 
 [X] Application’s folder structure follows the Model-View-Controller paradigm.
-[]X Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+[X] Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
 [] Application must be deployed to Heroku.
 [X] Application deployed at live URL.
 [X] Application loads with no errors.
 [X] Application GitHub URL submitted.
-[] GitHub repository contains application code.
+[X] GitHub repository contains application code.
 [X] User experience is intuitive and easy to navigate.
 [X] User interface style is clean and polished.
 [] Application resembles the mock-up functionality provided in the homework instructions.
