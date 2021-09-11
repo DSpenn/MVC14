@@ -18,14 +18,14 @@ const newCommentFormHandler = async (event) => {
   }
 };
 
-const ButtonHandler = async (event) => { 
+const delEditButtonHandler = async (event) => { 
   if (event.target.hasAttribute('data-delid')) { //if delete button
     let id = event.target.getAttribute('data-delid');
     const response = await fetch(`/api/comments/${id}`, {
       method: 'DELETE',
     });
 
-    if (response.ok) { document.location.reload(); }
+    if (response.ok) { location.reload(); }
      else {
       alert('Failed to delete Post');
      }
@@ -43,7 +43,7 @@ const ButtonHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.reload();
+        location.reload();
       } else {
         alert('Failed to update Comment');
       }
@@ -51,5 +51,5 @@ const ButtonHandler = async (event) => {
   }
 };
 
-document.querySelector('.comment-list').addEventListener('click', ButtonHandler);
+document.querySelector('.comment-list').addEventListener('click', delEditButtonHandler);
 document.querySelector('.new-comment-form').addEventListener('submit', newCommentFormHandler);
