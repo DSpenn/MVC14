@@ -8,13 +8,13 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 
 ## Packages
 
-[express-handlebars](https://www.npmjs.com/package/express-handlebars)
-[express-session](https://www.npmjs.com/package/express-session)
-[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
-[bcrypt package](https://www.npmjs.com/package/bcrypt)
-[dotenv package](https://www.npmjs.com/package/dotenv)
-[Sequelize](https://www.npmjs.com/package/sequelize)
-[MySQL2](https://www.npmjs.com/package/mysql2)
+* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+* [express-session](https://www.npmjs.com/package/express-session)
+* [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [bcrypt package](https://www.npmjs.com/package/bcrypt)
+* [dotenv package](https://www.npmjs.com/package/dotenv)
+* [Sequelize](https://www.npmjs.com/package/sequelize)
+* [MySQL2](https://www.npmjs.com/package/mysql2)
 
 ## User Story
 
