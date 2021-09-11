@@ -69,20 +69,21 @@ The following animation demonstrates the application functionality:
 
 ## Grading Requirements
 
-[X] Application’s folder structure follows the Model-View-Controller paradigm.
-[X] Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
-[X] Application must be deployed to Heroku.
-[X] Application deployed at live URL.
-[X] Application loads with no errors.
-[X] Application GitHub URL submitted.
-[X] GitHub repository contains application code.
-[X] User experience is intuitive and easy to navigate.
-[X] User interface style is clean and polished.
-[X] Application resembles the mock-up functionality provided in the homework instructions.
-[X] Repository has a unique name.
-[X] Repository follows best practices for file structure and naming conventions.
-[X] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-[X] Repository contains multiple descriptive commit messages.
-[X] Repository contains quality readme file with description, screenshot, and link to deployed application.
-[X] The URL of the functional, deployed application.
-[X] The URL of the GitHub repository, with a unique name and a readme describing the project.
+
+* [X] Application’s folder structure follows the Model-View-Controller paradigm.
+* [X] Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
+* [X] Application must be deployed to Heroku.
+* [X] Application deployed at live URL.
+* [X] Application loads with no errors.
+* [X] Application GitHub URL submitted.
+* [X] GitHub repository contains application code.
+* [X] User experience is intuitive and easy to navigate.
+* [X] User interface style is clean and polished.
+* [X] Application resembles the mock-up functionality provided in the homework instructions.
+* [X] Repository has a unique name.
+* [X] Repository follows best practices for file structure and naming conventions.
+* [X] Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+* [X] Repository contains multiple descriptive commit messages.
+* [X] Repository contains quality readme file with description, screenshot, and link to deployed application.
+* [X] The URL of the functional, deployed application.
+* [X] The URL of the GitHub repository, with a unique name and a readme describing the project.
