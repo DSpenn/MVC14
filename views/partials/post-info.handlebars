@@ -1,6 +1,7 @@
-<section class="card m-2 p-2 text-center">
-  <header><a class="navitem" href="/comment/{{id}}">{{title}}</a>
-  <p>Posted by {{user.name}} on {{format_date created_date}}</p></header>
+<section class="card mb-4 p-1 text-center border">
+  <header class="d-flex justify-content-between ">
+    <a class="navitem" href="/comment/{{id}}">{{title}}</a> Posted by {{user.name}} on {{format_date created_date}}
+  </header>
   <p class="card-body">{{body}}</p> 
     {{#each comments as |comment|}}
     <div class="card text-center gap-3 m-3 border border-light">
