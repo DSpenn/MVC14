@@ -69,7 +69,6 @@ The following animation demonstrates the application functionality:
 
 ## Grading Requirements
 
-
 * [X] Application’s folder structure follows the Model-View-Controller paradigm.
 * [X] Uses the [express-handlebars](https://www.npmjs.com/package/express-handlebars) package to implement Handlebars.js for your Views.
 * [X] Application must be deployed to Heroku.
