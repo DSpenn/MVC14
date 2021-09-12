@@ -14,10 +14,11 @@
       <h1>Tech Blog</h1>
     </header>
 
-    <nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
+    <nav class="navbar navbar-dark bg-dark d-flex justify-content-start p-2">
       <a href="/">Home</a>
       {{#if loggedin}}
         <a class="nav-link" href="/dashboard">Dashboard</a>
+        <a class="nav-link" href="/otherview">View #2</a>
         <button id="logout" class="btn-dark">Logout</button>
       {{else}}
         <a class="nav-link" href="/login">Login</a>

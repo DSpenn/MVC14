@@ -3,12 +3,12 @@ const {User, Post, Comment} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-	postid = req.get('Referrer').slice(30);
-	
+	//postid = req.get('Referrer').slice(30);
 	Comment.create({
 		content: req.body.content,
 		user_id: req.session.user_id,
-		post_id: postid
+		//post_id: postid
+		post_id: req.body.tempId
 	}).then(dbCommentData => res.json(dbCommentData)).catch(err => {
 		console.log(err);
 		res.status(500).json(err);

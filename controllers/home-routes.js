@@ -95,4 +95,40 @@ router.get('/signup', (req, res) => {
 });
 
 
+
+router.get('/otherview', async (req, res) => {
+try {
+	const dbPostData = await Post.findAll({
+		attributes: [ 'id', 'title', 'body', 'created_date' ],
+		include: [
+			{
+				model: Comment,
+				attributes: [ 'id', 'content', 'post_id', 'user_id' ],
+				include: {
+					model: User,
+					attributes: ['name']
+				}
+			},
+			{
+				model: User,
+				attributes: ['name']
+			}
+		]
+	});
+	const posts = dbPostData.map(post => post.get({ plain: true }));
+	res.render('otherview', {
+		posts,
+		loggedin: req.session.loggedin
+	});
+} catch (err) {
+	res.status(500).json(err);
+}
+});
+
+
+
+
+
+
+
 module.exports = router;
