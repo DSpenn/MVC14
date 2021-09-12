@@ -3,11 +3,9 @@ const newCommentFormHandler = async (event) => {
 
   let content = document.querySelector('#comment-content').value.trim();
 
-  //let id = document.querySelector('#comment-content').value.trim();
   let tempId = document.querySelector('#postid')
-  console.log("tempId", tempId);
   tempId = tempId.getAttribute("data-postid");
-  console.log("tempId", tempId);
+
 
   if (content) {
     const response = await fetch(`/api/comments/`, {
