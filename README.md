@@ -16,6 +16,8 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 
 ## Description
 
+[Heroku Deployed](https://fathomless-cove-11923.herokuapp.com/)
+* Packages used
 * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 * [express-session](https://www.npmjs.com/package/express-session)
 * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
@@ -24,9 +26,10 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
 
-## Video
+## Mock-Up
 
-[![Walkthrough Video]](SOON™)
+The following animation demonstrates the application functionality:
+![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
 
 ## Acceptance Criteria
 
@@ -65,11 +68,6 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
-
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
 
 ## Grading Requirements
 
