@@ -17,7 +17,7 @@ Your task this week is to build a CMS-style blog site similar to a Wordpress sit
 ## Description
 
 [Heroku Deployed](https://fathomless-cove-11923.herokuapp.com/)
-* Packages used
+### Packages used
 * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 * [express-session](https://www.npmjs.com/package/express-session)
 * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
